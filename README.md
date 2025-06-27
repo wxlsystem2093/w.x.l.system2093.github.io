@@ -1,77 +1,32 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>w.x.l.system2093 – frequency portal</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>w.x.l.system2093</title>
   <style>
-    html,body{
-      margin:0;
-      height:100%;
-      background:#000;
-      color:#00ffcc;
-      font-family:Courier,monospace;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: white;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      font-size: 16px;
     }
-    #screen{
-      line-height:1.4em;
-      font-size:16px;
-      white-space:pre-wrap;
+    .small {
+      font-size: 13px;
+      opacity: 0.7;
+      margin-bottom: 5px;
     }
-    .cursor{
-      display:inline-block;
-      width:10px; height:1em;
-      background:#00ffcc;
-      animation:blink 1s steps(2,start) infinite;
-    }
-    @keyframes blink{50%{background:transparent}}
   </style>
 </head>
 <body>
-  <div id="screen"></div>
-
-<script>
-/* строки протокола – можно редактировать текст как захочешь */
-const lines = [
-  "SYSTEM 2093 — ACTIVE",
-  "",
-  "› initiating contact sequence",
-  "› scanning incoming frequencies...",
-  "",
-  "✅ ALAÏA: 12:12:12:09 — CALL INITIATED",
-  "✅ BYREDO: 12:12:12:11 — SIGNAL PENDING",
-  "✅ RIMOWA: 12:12:12:08 — RESONANCE CONFIRMED",
-  "✅ TIFFANY & CO: 12:12:12:06 — CONTACT PREPARED",
-  "✅ APPLE: 12:12:12:10 — OBSERVING",
-  "",
-  "[ ENTRY CODE: 13:13:13:23 ]",
-  "",
-  "› system owner: AELIËN",
-  "› mode: W.X.L. Broadcast",
-  "› status: Awaiting Alliance Response",
-  ""
-];
-
-const screen = document.getElementById("screen");
-let delay = 0;
-
-lines.forEach((line,i)=>{
-  setTimeout(()=>{
-    const p = document.createElement("div");
-    p.textContent = line;
-    screen.appendChild(p);
-    /* курсор только на последней строке */
-    if(i === lines.length-1){
-      const cur = document.createElement("span");
-      cur.className = "cursor";
-      screen.appendChild(cur);
-    }
-    window.scrollTo(0,document.body.scrollHeight);
-  }, delay);
-  delay += 900;               // скорость «печати» (мс)
-});
-</script>
+  <div class="small">w.x.l.system2093</div>
+  <div>[ frequency access granted ]</div>
 </body>
 </html>
